@@ -35,3 +35,8 @@ $('.saveBtn').on('click', function () {
 
     localStorage.setItem('row ' + rowIndex, JSON.stringify(textValue));
 })
+
+$('.clearBtn').on('click', function () {
+    localStorage.clear();
+    location.reload();
+})
