@@ -9,7 +9,15 @@ $(function renderTextArea() {
         let storedText = JSON.parse(localStorage.getItem('row ' + i))
 
         if (currentTime === $(this).children('textarea')) {
-
+            $(this).children('textarea').addClass('present');
+            $(this).prevAll().children('textarea').addClass('past');
+            $(this).nextAll().children('textarea').addClass('future');
         }
-    })
-}
+
+        if (storedText === null) {
+            return;
+        }
+
+        rowText.val(storedText);
+    });
+})
