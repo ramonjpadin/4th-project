@@ -20,4 +20,18 @@ $(function renderTextArea() {
 
         rowText.val(storedText);
     });
+
+    if (currentTime < 9) {
+        $('.container').find('textarea').addClass('future');
+    } else if (currentTime > 17) {
+        $('.container').find('textarea').addClass('past');
+    }
+});
+
+$('.saveBtn').on('click', function () {
+    let textArea = $(this).siblings('textarea').val();
+    let rowIndex = $(this).parent().data('index');
+    let textValue = textArea;
+
+    localStorage.setItem('row ' + rowIndex, JSON.stringify(textValue));
 })
