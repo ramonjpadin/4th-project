@@ -1,0 +1,1 @@
+$('#currentDay').text(moment().format('[Today\'s Date: ]dddd, MMMM Do, YYYY h:mm:ss a'));
